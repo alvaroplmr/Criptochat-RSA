@@ -1,46 +1,55 @@
-# CriptoChat (RSA + Aritmética modular)
+# Sistema de Cifrado RSA en Python con Aritmética Modular
 
-Proyecto en Python que implementa **RSA** (cifrado/descifrado), junto con una librería de **aritmética modular**. Incluye:
+Este proyecto implementa un sistema de cifrado basado en el algoritmo RSA desarrollado desde cero en Python. Incluye la generación de claves públicas y privadas, cifrado y descifrado de mensajes, un sistema básico de padding y una demostración de ataque sobre RSA sin padding.
 
-- Generación de claves RSA (públicas y privadas)
-- Cifrado y descifrado de **cadenas de texto** carácter a carácter (Unicode → enteros)
-- Soporte de **padding** (añade dígitos aleatorios al final de cada carácter antes de cifrar)
-- Un módulo de “**ataque de texto claro elegido**” (para el caso RSA *sin padding*)
-- Programas de consola para registrar usuarios y “chatear” cifrando/descifrando
+El núcleo del proyecto consiste en la implementación manual de los fundamentos matemáticos que sustentan RSA (aritmética modular, algoritmo extendido de Euclides, exponenciación modular eficiente, etc.) y su aplicación en un entorno interactivo de consola tipo "chat cifrado".
+
+El código está organizado en varios módulos que permiten generar claves, registrar usuarios, cifrar y descifrar mensajes, así como analizar vulnerabilidades cuando no se utiliza padding criptográfico seguro.
 
 ---
 
 ## Estructura del proyecto
 
-- `modular.py`  
-  Funciones de aritmética modular: primos, factorización, Bezout, inversas modulares, potencia modular, Euler, etc.
+El repositorio contiene los siguientes archivos:
 
-- `rsa.py`  
-  Implementación de RSA:
-  - `generar_claves(min_primo, max_primo)` → `(n, e, d)`
-  - `cifrar_rsa(...)` / `descifrar_rsa(...)`
-  - `cifrar_cadena_rsa(...)` / `descifrar_cadena_rsa(...)`
-  - `ataque_texto_elegido(...)` (ataque para RSA **sin padding**)
+- **criptochat.py**  
+  Script principal. Gestiona la interacción con el usuario, permite cifrar y descifrar mensajes entre usuarios y ejecutar el ataque sobre el criptograma de ejemplo.
 
-- `registrarusuario.py`  
-  Crea usuarios y guarda sus claves en ficheros dentro de `Usuarios/`:
-  - `Usuarios/pub_<nombre>.txt` (n, e, dígitos de padding)
-  - `Usuarios/priv_<nombre>.txt` (d)
+- **rsa.py**  
+  Implementación del algoritmo RSA:
+  - Generación de claves (n, e, d)
+  - Cifrado y descifrado de enteros
+  - Cifrado y descifrado de cadenas de texto
+  - Ataque de texto claro elegido para el caso sin padding
 
-- `criptochat.py`  
-  Programa principal de consola:
-  - Cifrar con la clave pública del otro usuario
-  - Descifrar con la clave privada del usuario 1
-  - Opción `X` para descifrar el criptograma de `Criptograma_X.txt` usando el ataque
+- **modular.py**  
+  Implementación de funciones de teoría de números y aritmética modular:
+  - Cálculo del máximo común divisor
+  - Algoritmo extendido de Euclides
+  - Inverso modular
+  - Exponenciación modular eficiente
+  - Utilidades relacionadas con números primos
 
-- `Criptograma_X.txt`  
-  Fichero con una clave pública y un mensaje `X` cifrado (pensado para el ataque sin padding).
+- **registrarusuario.py**  
+  Script para generar usuarios y almacenar sus claves en la carpeta `Usuarios/`.
 
-- `P2GP12.pdf`  
-  Documento del enunciado/entrega (si aplica al contexto académico).
+- **Criptograma_X.txt**  
+  Archivo que contiene una clave pública y un mensaje cifrado utilizado para demostrar el ataque sin padding.
+
+- **Usuarios/**  
+  Carpeta donde se almacenan las claves públicas y privadas generadas.
+
+---
+
+## Requisitos
+
+El proyecto utiliza únicamente Python estándar y no requiere dependencias externas.
+
+- Python 3.8 o superior
 
 ---
 
 ## Autores
-[@alvaroplmr](https://github.com/alvaroplmr)
+
+[@alvaroplmr](https://github.com/alvaroplmr)  
 [@pablordgzglez](https://github.com/pablordgzglez)
