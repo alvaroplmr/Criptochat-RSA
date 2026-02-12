@@ -1,6 +1,6 @@
 # CriptoChat (RSA + Aritmética modular)
 
-Proyecto en Python que implementa **RSA** (cifrado/descifrado) a nivel educativo, junto con una librería de **aritmética modular**. Incluye:
+Proyecto en Python que implementa **RSA** (cifrado/descifrado), junto con una librería de **aritmética modular**. Incluye:
 
 - Generación de claves RSA (públicas y privadas)
 - Cifrado y descifrado de **cadenas de texto** carácter a carácter (Unicode → enteros)
@@ -41,18 +41,6 @@ Proyecto en Python que implementa **RSA** (cifrado/descifrado) a nivel educativo
 
 ---
 
-## Requisitos
-
-- Python 3.8+ (recomendado)
-- No requiere librerías externas (solo estándar de Python)
-
----
-
-## Instalación / Preparación
-
-Clona el repositorio o descárgalo y entra en la carpeta del proyecto:
-
-```bash
-git clone <tu-repo>
-cd <tu-repo>
-
+## Autores
+[@alvaroplmr](https://github.com/alvaroplmr)
+[@pablordgzglez](https://github.com/pablordgzglez)
