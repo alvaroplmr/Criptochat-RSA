@@ -45,7 +45,11 @@ El repositorio contiene los siguientes archivos:
 
 El proyecto utiliza únicamente Python estándar y no requiere dependencias externas.
 
-- Python 3.8 o superior
+sys
+typing (List, Tuple, Dict)
+os
+math
+random
 
 ---
 
