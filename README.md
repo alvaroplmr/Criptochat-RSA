@@ -24,6 +24,7 @@ El repositorio contiene los siguientes archivos:
 
 - **modular.py**  
     Implementación de funciones de teoría de números y aritmética modular. Las funciones están escritas buscando el mejor equilibrio entre claridad y rendimiento: se usan enfoques eficientes como exponenciación modular rápida y el algoritmo extendido de Euclides, evitando operaciones innecesarias en bucles y reduciendo el coste de cálculos repetidos. Además, se comparó el rendimiento con una implementación equivalente usada en otra práctica del curso, obteniendo mejores tiempos en las operaciones más repetidas (especialmente en potencia modular e inverso modular), que son las que más impacto tienen en RSA.
+    
   - Cálculo del máximo común divisor
   - Algoritmo extendido de Euclides
   - Inverso modular
